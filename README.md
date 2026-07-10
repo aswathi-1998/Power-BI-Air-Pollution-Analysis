@@ -28,3 +28,15 @@ To clean the data, Power Query was used. and the following steps where undertake
 9. Creation of Fact Table by Appending all station wise consolidated tables
 <img width="1363" height="715" alt="image" src="https://github.com/user-attachments/assets/b04953ce-99b3-4994-acb3-72daf92880d9" />
 10. Creation of a station Dimension table
+
+# Step 3 : Creating the model
+
+# Step 4 : Creating Measures
+
+# Step 5 : Creating the visualizations
+
+# Key Findings
+
+# Challenges
+
+# Future work

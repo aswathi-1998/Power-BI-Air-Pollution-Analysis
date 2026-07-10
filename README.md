@@ -7,4 +7,6 @@ With rising global temperatures and unepexpected changes in the environment, it 
 Keeping this in mind, I have created an air pollution report in Power BI, tracking the concentration of 6 air pollutants across various substations in the state of Keralam, India. The aim is to identify the patterns of air pollutants, see where the points of concern are, and to identify any possible solutions for it.
 
 # The Data
-All data is collected from publically available sources via the [Central Pollution Control Board website](https://cpcb.gov.in/) . **Import** mode was used to collect the data from 2024- 2026, and from 2021 - 2025 collected which was further cleaned before analysis.
+All data is collected from publically available sources via the [Central Pollution Control Board website](https://cpcb.gov.in/) . **Import** mode was used to collect the [data](https://airquality.cpcb.gov.in/ccr/#/caaqm-dashboard-all/advance-search) from 2021-2026 collected which was further cleaned before analysis.
+
+Archive sources : (https://airquality.cpcb.gov.in/ccr/#/repository/data)

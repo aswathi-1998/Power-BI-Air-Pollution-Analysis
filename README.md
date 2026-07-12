@@ -31,9 +31,11 @@ To clean the data, Power Query was used. and the following steps where undertake
 
 # Step 3 : Creating the model
 <img width="652" height="449" alt="image" src="https://github.com/user-attachments/assets/ce3f6da8-29a5-44d1-92af-c55a711ca1a3" />
-What was used at core was a star schema, with the dimension tab being a dedicated dates table for easier performance of time intelligence 
+What was used at core was a star schema, with the dimension tab being a dedicated dates table for easier performance of time intelligence
+
 # Step 4 : Creating Measures
 A dedicated measures table was created to organize the measures for easy acces. For each Pollutant, the relevant sub index was calculated using the prescribed formula by CPCB. The maximum value of these subindices is considered to be the overall AQI.
+
 # Step 5 : Creating the visualizations
 
 # Key Findings

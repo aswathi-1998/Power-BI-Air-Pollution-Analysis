@@ -1,6 +1,6 @@
 # Insights and Analysis
 
-[<img width="887" height="499" alt="image" src="https://github.com/user-attachments/assets/5eff5222-12a4-4ff6-9bf0-e49bd152eb51" />]
+<img width="887" height="499" alt="image" src="https://github.com/user-attachments/assets/5eff5222-12a4-4ff6-9bf0-e49bd152eb51" />]
 
 <img width="881" height="493" alt="image" src="https://github.com/user-attachments/assets/d2690e65-ec7b-47a2-835e-2e534b0f12b2" />
 

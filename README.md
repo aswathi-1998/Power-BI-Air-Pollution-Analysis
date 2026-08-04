@@ -37,7 +37,20 @@ What was used at core was a star schema, with the dimension tab being a dedicate
 A dedicated measures table was created to organize the measures for easy acces. For each Pollutant, the relevant sub index was calculated using the prescribed formula by CPCB. The maximum value of these subindices is considered to be the overall AQI.
 
 # Step 5 : Creating the visualizations
-
+ <table>
+  <tr>
+    <td><img width="420" alt="screenshot1" src="https://github.com/user-attachments/assets/5eff5222-12a4-4ff6-9bf0-e49bd152eb51" /></td>
+    <td><img width="420" alt="screenshot2" src="https://github.com/user-attachments/assets/d2690e65-ec7b-47a2-835e-2e534b0f12b2" /></td>
+  </tr>
+  <tr>
+    <td><img width="420" alt="screenshot3" src="https://github.com/user-attachments/assets/7685fb81-fc41-4532-928a-2fe12179f296" /></td>
+    <td><img width="420" alt="screenshot4" src="https://github.com/user-attachments/assets/1f95f9e1-dd90-4af0-b81a-a591995e4f79" /></td>
+  </tr>
+  <tr>
+    <td><img width="420" alt="screenshot5" src="https://github.com/user-attachments/assets/41a724b0-c3c9-410e-a45a-95514ab7f665" /></td>
+    <td></td>
+  </tr>
+</table>
 # Key Findings
 
 # Challenges

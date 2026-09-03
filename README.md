@@ -35,7 +35,58 @@ What was used at core was a star schema, with the dimension tab being a dedicate
 
 # Step 4 : Creating Measures
 A dedicated measures table was created to organize the measures for easy acces. For each Pollutant, the relevant sub index was calculated using the prescribed formula by CPCB. The maximum value of these subindices is considered to be the overall AQI.
+Some of the measures created wre:
+```
+AQI SO2 = 
+VAR _IHi = 
+        SWITCH(
+            TRUE(),
+            [SO2 Avg] <= 40, 50,
+            [SO2 Avg] <= 80, 100,
+            [SO2 Avg] <= 380, 200,
+            [SO2 Avg] <= 800,300,
+            [SO2 Avg] <= 1600,400,
+            500)
 
+VAR _ILo = 
+        SWITCH(
+            TRUE(),
+            [SO2 Avg] <= 40, 0,
+            [SO2 Avg] <= 80, 51,
+            [SO2 Avg] <= 380, 101,
+            [SO2 Avg] <= 800,201,
+            [SO2 Avg] <= 1600,301,
+            401)
+VAR _BPHi = 
+        SWITCH(
+            TRUE(),
+            [SO2 Avg] <= 40, 40,
+            [SO2 Avg] <= 80, 80,
+            [SO2 Avg]<= 380, 380,
+            [SO2 Avg] <= 800,800,
+            [SO2 Avg] <= 1600,1600,
+            3200)
+VAR _BPLo = 
+        SWITCH(
+            TRUE(),
+            [SO2 Avg] <= 40, 0,
+            [SO2 Avg] <= 80, 47,
+            [SO2 Avg] <= 380, 81,
+            [SO2 Avg]<= 800,381,
+            [SO2 Avg] <= 1600,801,
+            1600)
+
+VAR _Conc = ROUND([SO2 Avg],0)
+RETURN
+IF([SO2 Avg] <> BLANK(),
+(DIVIDE(_IHi - _ILo, _BPHi - _BPLo) * (_Conc - _BPLo)) + _ILo)
+
+```
+```
+AQI Max = 
+VAR _List = {[AQI NH3],[AQI NO2],[AQI PM10],[AQI PM2.5],[AQI SO2]}
+RETURN MAXX(_List,[Value])
+```
 # Step 5 : Creating the visualizations
  <table>
   <tr>
@@ -51,8 +102,24 @@ A dedicated measures table was created to organize the measures for easy acces. 
     <td></td>
   </tr>
 </table>
+
 # Key Findings
+
+- Most prevalent pollutants were PM 2.5 AND PM 10.
+- The AQI levels showed cyclical patterns – a decreasing pattern from March-April to Early October followed by an increase.
+- Overall, the AQI remained in the ‘Satisfactory’ levels (between 50 and 100), with rare spikes above that level.
+- Crowded areas like Vytilla shows relatively higher AQI, possibly indicating the influence of heavy traffic congestion to poor air quality.
+- Unnatural spike in Plammoodu station in summer 2025, on searching through social media, the reason was attributed to a faulty meter.
+
 
 # Challenges
 
+- Poor documentation of data - out of the 9 CAAQMS stations, only data pertaining to 7 were available, of which for Vyttilla, the data was only available till 2024
+- I found it difficult to integrate the  live data via an API, hence import mode was used after downloading the data into the local computer, Hence owing to limitations in space, only Kerala was considered
+- CO and O3 required an 8 hour window average while the rest used a 24 hour window. Thus these 2 were not integrated as even in official website, for Keralam, these were not the major cause of pollution
+  
 # Future work
+- Increase the number of pollutants analyzed (CO and Ozone)
+- Use live data for real time analysis
+- Compare performance with other states
+
